@@ -1,7 +1,7 @@
-# credit-card_defaults_prediction
+# credit_card_defaults_prediction
 Repository to Collaborate on Capstone project
 
-# Prerequisites: 
+## Prerequisites: 
 
 ### Python Version
 For this project we are using Python version 3.10.15, conda automatically will install and set the correct python version for the project so there is nothing that needs to be done.
@@ -37,7 +37,7 @@ You know conda is installed and working if you see (base) in your terminal. Next
 
 ### 2. Install Make
 
-Make is a build automation tool that executes commands defined in a Makefile to streamline tasks like compiling code, setting up environments, and running scripts.
+Make is a build automation tool that executes commands defined in a Makefile to streamline tasks like compiling code, setting up environments, and running scripts. [more information here](https://formulae.brew.sh/formula/make)
 
 #### Installation
 
@@ -91,7 +91,7 @@ The following commands are available in this project’s `Makefile`:
 
     Command you actually need to run in your terminal:
     ```bash
-    $ conda activate credit-card_defaults_prediction
+    $ conda activate credit_card_defaults_prediction
     ```
 
 - **Deactivate the environment**:
@@ -143,7 +143,7 @@ To simplify knowing which commands you need to run and when you can follow these
     $ make create
 
     <!-- After the environment was successfully created, activate the environment. -->
-    $ conda activate credit-card_defaults_prediction
+    $ conda activate credit_card_defaults_prediction
 
     <!-- verify the conda environment -->
     $ make verify
@@ -190,7 +190,7 @@ To simplify knowing which commands you need to run and when you can follow these
     <!-- Update env based off of the env file. It is best to deactivate the conda env before you do this step-->
     $ conda deactivate
     $ make update
-    $ conda activate credit-card_defaults_prediction
+    $ conda activate credit_card_defaults_prediction
 
     $ make notebook
     ```
