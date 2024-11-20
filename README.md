@@ -1,6 +1,16 @@
 # credit_card_defaults_prediction
 Repository to Collaborate on Capstone project
 
+## Cloning this repository:
+
+If you would like to clone this repository and actively develop new features for this, here are the steps to clone this to your local machine and get started.
+
+```bash
+$ cd <some>/<dir>/
+$ git clone https://github.com/amarchini5339/credit-card_defaults_prediction.git
+$ cd ./credit-card_defaults_prediction
+```
+
 ## Prerequisites: 
 
 ### Python Version
