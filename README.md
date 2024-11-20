@@ -18,6 +18,8 @@ For this project we are using Python version 3.10.15, conda automatically will i
 
 ### 1. Install Miniconda
 
+If you are already using Anaconda or any other conda distribution, feel free to skip this step.
+
 Miniconda is a minimal installer for `conda`, which we will use for managing environments and dependencies in this project. Follow these steps to install Miniconda or go [here](https://docs.anaconda.com/miniconda/install/) to reference the documentation: 
 
 1. Open your terminal and run the following commands:
