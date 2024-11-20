@@ -12,7 +12,7 @@ create: conda-env
 # Create a conda environment from environment.yml
 conda-env:
 	@echo "Creating conda environment $(ENV_NAME) from $(ENV_FILE)..."
-	conda create  --name $(ENV_NAME) --file $(ENV_FILE)
+	conda env create  --name $(ENV_NAME) --file $(ENV_FILE)
 
 # Update a conda environment from environment.yml
 update:
