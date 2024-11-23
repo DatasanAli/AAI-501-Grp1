@@ -14,11 +14,14 @@ numerical_features = [
 
 def get_features_and_targets():
     # fetch dataset 
-    default_of_credit_card_clients = fetch_ucirepo(id=350) 
-    
-    # data (as pandas dataframes) 
-    features = default_of_credit_card_clients.data.features
-    targets = default_of_credit_card_clients.data.targets
+    default_of_credit_card_clients = pd.read_csv('../default_of_credit_card_clients.csv')
+    default_of_credit_card_clients.drop(default_of_credit_card_clients.columns[0], axis=1, inplace=True)
+    default_of_credit_card_clients.drop(index=0, inplace=True)
+    default_of_credit_card_clients = default_of_credit_card_clients.apply(pd.to_numeric, errors='coerce')
+
+    # data (as pandas dataframes)
+    features = default_of_credit_card_clients[['X{}'.format(col_num) for col_num in range(1,24)]]
+    targets = default_of_credit_card_clients[['Y']]
 
     features.rename(inplace=True,
                     columns={
