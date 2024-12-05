@@ -1,5 +1,6 @@
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
+import numpy as np
 
 # Avoid warnings caused by inplace column name reassignment
 pd.options.mode.chained_assignment = None
@@ -122,3 +123,10 @@ def get_normalized_features_and_targets():
     features[numerical_features] = scaler.fit_transform(features[numerical_features])
 
     return features, targets
+
+
+def dense_transform(x):
+    if isinstance(x, np.ndarray):
+        return x
+    else:
+        return x.toarray()
