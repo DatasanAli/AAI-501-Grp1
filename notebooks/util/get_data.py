@@ -87,15 +87,12 @@ def get_features_and_targets():
     features["GENDER"] = features["GENDER"].map(
         {1: 0, 2: 1}
     )  # 1: Male -> 0, 2: Female -> 1
-    print("GENDER column transformed:", features["GENDER"].unique())
 
     features["EDUCATION_LEVEL"] = features["EDUCATION_LEVEL"].replace(
         {0: 4, 5: 4, 6: 4}
     )  # 4: Others
-    print("EDUCATION_LEVEL column transformed:", features["EDUCATION_LEVEL"].unique())
 
     features["MARITAL_STATUS"] = features["MARITAL_STATUS"].replace({0: 3})  # 3: Others
-    print("MARITAL_STATUS column transformed:", features["MARITAL_STATUS"].unique())
 
     return cap_outliers(features, numerical_features), targets
 
@@ -110,7 +107,6 @@ def cap_outliers(data, columns):
         outliers = data[(data[column] < lower_bound) | (data[column] > upper_bound)][
             column
         ]
-        print(f"{column}: {len(outliers)} outliers capped.")
         data[column] = data[column].clip(lower=lower_bound, upper=upper_bound)
     return data
 
