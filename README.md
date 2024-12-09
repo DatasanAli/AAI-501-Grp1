@@ -304,27 +304,35 @@ This makefile defines some custom commands that we can use to help ensure our en
 This has basic information regarding creating and setting up the project for replicability, as well as our reasoning behind the project yourself. You are reading this in the README.
 
 ## Contributors
-<table border="0">
+
+<style>
+table, td{
+    border:0;
+    text-align: center;
+}
+</style>
+
+<table>
   <tr>
-    <td align="center">
+    <td>
       <a href="https://github.com/amarchini5339">
         <img src="https://github.com/amarchini5339.png" width="100" height="100" alt="Alex Marchini"/><br />
         <sub><b>Alex Marchini</b></sub>
       </a>
     </td>
-    <td align="center">
+    <td>
       <a href="https://github.com/AntonioRecaldeRusso">
         <img src="https://github.com/AntonioRecaldeRusso.png" width="100" height="100" alt="Antonio Recalde Russo"/><br />
         <sub><b>Antonio Recalde Russo</b></sub>
       </a>
     </td>
-     <td align="center">
+     <td>
       <a href="https://github.com/omarsagoo.png">
         <img src="https://github.com/omarsagoo.png" width="100" height="100" alt="Omar Sagoo"/><br />
         <sub><b>Omar Sagoo</b></sub>
       </a>
     </td>
-    <td align="center">
+    <td>
       <a href="https://github.com/DatasanAli">
         <img src="https://github.com/DatasanAli.png" width="100" height="100" alt="Hassan Ali"/><br />
         <sub><b>Hassan Ali</b></sub>
