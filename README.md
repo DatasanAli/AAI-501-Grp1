@@ -304,7 +304,7 @@ This makefile defines some custom commands that we can use to help ensure our en
 This has basic information regarding creating and setting up the project for replicability, as well as our reasoning behind the project yourself. You are reading this in the README.
 
 ## Contributors
-<table>
+<table border="0">
   <tr>
     <td align="center">
       <a href="https://github.com/amarchini5339">
