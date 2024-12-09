@@ -21,6 +21,41 @@ The system will handle data preprocessing, model training, evaluation, and inter
 outputs. This includes balancing the dataset using SMOTE techniques, tuning parameters, and
 comparing models on metrics like accuracy, recall, and interpretability.
 
+## Dataset
+You can find the dataset stored in this repo, however it comes from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients)
+
+There are 30,000 instances in this dataset with 23 features. We rename the features for redability. The data was aggregated in .
+
+### Features
+
+This table lists the old feature names and their corresponding new names used in the dataset:
+
+| Old Feature Name | New Feature Name      | Description                                                                 |
+|-------------------|-----------------------|-----------------------------------------------------------------------------|
+| X1               | CREDIT_LIMIT          | Credit limit (NT dollar)                                                   |
+| X2               | GENDER                | Gender (1 = male; 2 = female)                                              |
+| X3               | EDUCATION_LEVEL       | Education level (1 = graduate school; 2 = university; 3 = high school; 4 = others) |
+| X4               | MARITAL_STATUS        | Marital status (1 = married; 2 = single; 3 = others)                       |
+| X5               | AGE                   | Age (years)                                                                |
+| X6               | SEPT_PAY_STATUS       | Repayment status in September  (-1 = pay duly; 1-9 = months delayed)   |
+| X7               | AUG_PAY_STATUS        | Repayment status in August  (-1 = pay duly; 1-9 = months delayed)      |
+| X8               | JULY_PAY_STATUS       | Repayment status in July  (-1 = pay duly; 1-9 = months delayed)        |
+| X9               | JUNE_PAY_STATUS       | Repayment status in June  (-1 = pay duly; 1-9 = months delayed)        |
+| X10              | MAY_PAY_STATUS        | Repayment status in May  (-1 = pay duly; 1-9 = months delayed)         |
+| X11              | APRIL_PAY_STATUS      | Repayment status in April  (-1 = pay duly; 1-9 = months delayed)       |
+| X12              | SEPT_BILL             | Amount of bill statement in September  (NT dollar)                     |
+| X13              | AUG_BILL              | Amount of bill statement in August  (NT dollar)                        |
+| X14              | JULY_BILL             | Amount of bill statement in July  (NT dollar)                          |
+| X15              | JUNE_BILL             | Amount of bill statement in June  (NT dollar)                          |
+| X16              | MAY_BILL              | Amount of bill statement in May  (NT dollar)                           |
+| X17              | APRIL_BILL            | Amount of bill statement in April  (NT dollar)                         |
+| X18              | SEPT_PAYMENT          | Amount paid in September  (NT dollar)                                  |
+| X19              | AUG_PAYMENT           | Amount paid in August  (NT dollar)                                     |
+| X20              | JULY_PAYMENT          | Amount paid in July  (NT dollar)                                       |
+| X21              | JUNE_PAYMENT          | Amount paid in June  (NT dollar)                                       |
+| X22              | MAY_PAYMENT           | Amount paid in May  (NT dollar)                                        |
+| X23              | APRIL_PAYMENT         | Amount paid in April  (NT dollar)                                      |
+
 ## Cloning this repository:
 
 If you would like to clone this repository and actively develop new features for this, here are the steps to clone this to your local machine and get started.
