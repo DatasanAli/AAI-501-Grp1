@@ -339,14 +339,6 @@ This makefile defines some custom commands that we can use to help ensure our en
 This has basic information regarding creating and setting up the project for replicability, as well as our reasoning behind the project yourself. You are reading this in the README.
 
 ## Contributors
-
-<style>
-table, td{
-    border:0;
-    text-align: center;
-}
-</style>
-
 <table>
   <tr>
     <td>
