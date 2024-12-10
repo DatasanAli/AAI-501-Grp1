@@ -1,5 +1,60 @@
-# credit_card_defaults_prediction
-Repository to Collaborate on Capstone project
+# Credit Card Defaults Prediction Models
+The problem we’re addressing is predicting credit card defaults for a financial institution, aiming
+to minimize the risk of approving loans or credit lines to high-risk customers. This requires
+accurately predicting the probability of default while providing interpretable insights into what
+drives these predictions, which is crucial for regulatory and operational transparency.
+We plan to investigate several machine learning and AI algorithms:
+
+1. Artificial Neural Network (ANN) integrated with the Sorting Smoothing Method (SSM)
+can enhance accuracy in predicting credit card defaults and estimating default
+probabilities by effectively capturing complex nonlinear relationships in the data while
+reducing noise and improving model stability
+2. XGBoost provides robust and efficient classification for credit card default prediction,
+while pairing it with SHAP (SHapley Additive ExPlanations) ensures interpretability by
+highlighting the importance and contribution of each feature to the model's predictions.
+3. Naive Bayes can be used to predict credit card defaults by calculating the probability of
+default based on features like payment history, billing amounts, and customer
+demographics, under the assumption of conditional independence between these
+features
+
+The system will handle data preprocessing, model training, evaluation, and interpretability
+outputs. This includes balancing the dataset using SMOTE techniques, tuning parameters, and
+comparing models on metrics like accuracy, recall, and interpretability.
+
+## Dataset
+You can find the dataset stored in this repo, however it comes from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients)
+
+There are 30,000 instances in this dataset with 23 features. We rename the features for redability. The data was aggregated in .
+
+### Features
+
+This table lists the old feature names and their corresponding new names used in the dataset:
+
+| Old Feature Name | New Feature Name      | Description                                                                 |
+|-------------------|-----------------------|-----------------------------------------------------------------------------|
+| X1               | CREDIT_LIMIT          | Credit limit (NT dollar)                                                   |
+| X2               | GENDER                | Gender (1 = male; 2 = female)                                              |
+| X3               | EDUCATION_LEVEL       | Education level (1 = graduate school; 2 = university; 3 = high school; 4 = others) |
+| X4               | MARITAL_STATUS        | Marital status (1 = married; 2 = single; 3 = others)                       |
+| X5               | AGE                   | Age (years)                                                                |
+| X6               | SEPT_PAY_STATUS       | Repayment status in September  (-1 = pay duly; 1-9 = months delayed)   |
+| X7               | AUG_PAY_STATUS        | Repayment status in August  (-1 = pay duly; 1-9 = months delayed)      |
+| X8               | JULY_PAY_STATUS       | Repayment status in July  (-1 = pay duly; 1-9 = months delayed)        |
+| X9               | JUNE_PAY_STATUS       | Repayment status in June  (-1 = pay duly; 1-9 = months delayed)        |
+| X10              | MAY_PAY_STATUS        | Repayment status in May  (-1 = pay duly; 1-9 = months delayed)         |
+| X11              | APRIL_PAY_STATUS      | Repayment status in April  (-1 = pay duly; 1-9 = months delayed)       |
+| X12              | SEPT_BILL             | Amount of bill statement in September  (NT dollar)                     |
+| X13              | AUG_BILL              | Amount of bill statement in August  (NT dollar)                        |
+| X14              | JULY_BILL             | Amount of bill statement in July  (NT dollar)                          |
+| X15              | JUNE_BILL             | Amount of bill statement in June  (NT dollar)                          |
+| X16              | MAY_BILL              | Amount of bill statement in May  (NT dollar)                           |
+| X17              | APRIL_BILL            | Amount of bill statement in April  (NT dollar)                         |
+| X18              | SEPT_PAYMENT          | Amount paid in September  (NT dollar)                                  |
+| X19              | AUG_PAYMENT           | Amount paid in August  (NT dollar)                                     |
+| X20              | JULY_PAYMENT          | Amount paid in July  (NT dollar)                                       |
+| X21              | JUNE_PAYMENT          | Amount paid in June  (NT dollar)                                       |
+| X22              | MAY_PAYMENT           | Amount paid in May  (NT dollar)                                        |
+| X23              | APRIL_PAYMENT         | Amount paid in April  (NT dollar)                                      |
 
 ## Cloning this repository:
 
@@ -222,3 +277,93 @@ To simplify knowing which commands you need to run and when you can follow these
     $ git commit -m "This is my commit message!"
     $ git push origin <branch_name>
     ```
+## Directory Structure
+```
+credit-card_defaults_prediction/
+    ├── notebooks/
+        ├── models/
+            ├── ann/
+                ├── ann_report.joblib
+                └── ann_roc_auc.joblib
+            ├── naive_bayes/
+                ├── naive_bayes_ensemble.joblib
+                ├── test_features.joblib
+                └── test_targets.joblib
+            └── xgboost/
+                ├── xbg_model.joblib
+                ├── test_features.joblib
+                └── test_targets.joblib
+        ├── util/
+            ├── get_data.py
+            ├── model_eval.py
+            └── shap.py
+        ├── cc-default-prediction.ipynb
+        ├── model-comparison.ipynb
+        ├── naive-bayes.ipynb
+        ├── neural-network.ipynb
+        └── xgboost.ipynb
+    ├── proposal/
+        └── Final Project Proposal.pdf
+    ├── .gitignore
+    ├── README.md
+    ├── Makefile
+    ├── default_of_credit_card_clients.csv
+    └── environment.yml
+```
+
+### notebooks
+This directory holds all of the relevant information for the notebooks, such as utility functions, and exported model information using joblib. 
+
+There are 5 main notebooks:
+- One for basic EDA of our data
+- Three for creating our models
+- One for comparing the three models together
+
+The models directory contains .joblib files for each of the models that we can use to easily export and compare against each other.
+
+the util directory holds helper functions that we can use across all of the models, to simplify our code and ensure certain things are the same for each model.
+
+### proposal
+This directory holds our project proposal saved as a PDF. It explains our contributions and intial information regarding our reasoning behind this project.
+
+### default_of_credit_card.csv
+This is the raw datafile for our dataset. Imported into the repo to ensure smoother analysis and training of our models.
+
+### environment.yml
+This is our conda file that stores all of our dependencies, including python version and package versions.
+
+### Makefile
+This makefile defines some custom commands that we can use to help ensure our environments are the same across all of our machines.
+
+### README.md
+This has basic information regarding creating and setting up the project for replicability, as well as our reasoning behind the project yourself. You are reading this in the README.
+
+## Contributors
+<table>
+  <tr>
+    <td>
+      <a href="https://github.com/amarchini5339">
+        <img src="https://github.com/amarchini5339.png" width="100" height="100" alt="Alex Marchini"/><br />
+        <sub><b>Alex Marchini</b></sub>
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/AntonioRecaldeRusso">
+        <img src="https://github.com/AntonioRecaldeRusso.png" width="100" height="100" alt="Antonio Recalde Russo"/><br />
+        <sub><b>Antonio Recalde Russo</b></sub>
+      </a>
+    </td>
+     <td>
+      <a href="https://github.com/omarsagoo.png">
+        <img src="https://github.com/omarsagoo.png" width="100" height="100" alt="Omar Sagoo"/><br />
+        <sub><b>Omar Sagoo</b></sub>
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/DatasanAli">
+        <img src="https://github.com/DatasanAli.png" width="100" height="100" alt="Hassan Ali"/><br />
+        <sub><b>Hassan Ali</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
